@@ -1,0 +1,135 @@
+{
+  "created_at": "2026-07-03",
+  "currency": "EUR",
+  "capital_inicial": 10000.0,
+  "cash": 1000.0,
+  "positions": {
+    "VWCE.DE": {
+      "shares": 21.099589444023756,
+      "avg_price": 165.8800048828125
+    },
+    "EQQQ.DE": {
+      "shares": 3.1565657781953824,
+      "avg_price": 633.5999755859375
+    },
+    "MSFT": {
+      "shares": 1.9206638294360487,
+      "avg_price": 390.489990234375
+    },
+    "AAPL": {
+      "shares": 2.430094249212019,
+      "avg_price": 308.6300048828125
+    },
+    "AGGH.L": {
+      "shares": 191.80972475304497,
+      "avg_price": 5.2135
+    },
+    "BTC-EUR": {
+      "shares": 0.018401701524832555,
+      "avg_price": 54342.80078125
+    }
+  },
+  "transactions": [
+    {
+      "date": "2026-07-03",
+      "type": "buy",
+      "ticker": "VWCE.DE",
+      "amount_eur": 3500.0,
+      "price": 165.8800048828125,
+      "shares": 21.099589444023756,
+      "reason": "Núcleo del portafolio: ETF FTSE All-World con ~3500 acciones globales. Máxima diversificación a bajo coste como base de la cartera (35%)."
+    },
+    {
+      "date": "2026-07-03",
+      "type": "buy",
+      "ticker": "EQQQ.DE",
+      "amount_eur": 2000.0,
+      "price": 633.5999755859375,
+      "shares": 3.1565657781953824,
+      "reason": "ETF Nasdaq-100 para capturar sesgo growth/tecnológico sin concentrarse en un solo valor. Complementa el ETF global con mayor potencial de revalorización en horizonte corto-medio (20%)."
+    },
+    {
+      "date": "2026-07-03",
+      "type": "buy",
+      "ticker": "MSFT",
+      "amount_eur": 750.0,
+      "price": 390.489990234375,
+      "shares": 1.9206638294360487,
+      "reason": "Microsoft: liderazgo en cloud (Azure), IA (Copilot/OpenAI), y gaming. Sólida generación de caja y crecimiento de ingresos recurrentes. Posición individual moderada (7.5%)."
+    },
+    {
+      "date": "2026-07-03",
+      "type": "buy",
+      "ticker": "AAPL",
+      "amount_eur": 750.0,
+      "price": 308.6300048828125,
+      "shares": 2.430094249212019,
+      "reason": "Apple: ecosistema defensivo, fuerte crecimiento de servicios (App Store, iCloud, Apple TV+) y integración de IA en hardware. Posición individual moderada (7.5%)."
+    },
+    {
+      "date": "2026-07-03",
+      "type": "buy",
+      "ticker": "AGGH.L",
+      "amount_eur": 1000.0,
+      "price": 5.2135,
+      "shares": 191.80972475304497,
+      "reason": "ETF de bonos globales agregados (iShares). Proporciona estabilidad, baja correlación con renta variable y actúa como amortiguador ante caídas del mercado (10%)."
+    },
+    {
+      "date": "2026-07-03",
+      "type": "buy",
+      "ticker": "BTC-EUR",
+      "amount_eur": 1000.0,
+      "price": 54342.80078125,
+      "shares": 0.018401701524832555,
+      "reason": "Pequeña asignación a Bitcoin como apuesta asimétrica de alto riesgo/recompensa. Impacto máximo acotado al 10% del total. Diversificación fuera de activos tradicionales."
+    }
+  ],
+  "snapshots": [
+    {
+      "date": "2026-07-03",
+      "total_value": 10000.0,
+      "cash": 10000.0,
+      "positions": {},
+      "note": "Reinicio de la simulacion con 10000 EUR de capital inicial"
+    },
+    {
+      "date": "2026-07-03",
+      "total_value": 10000.0,
+      "cash": 1000.0,
+      "positions": {
+        "VWCE.DE": {
+          "shares": 21.099589444023756,
+          "price": 165.8800048828125,
+          "value": 3500.0
+        },
+        "EQQQ.DE": {
+          "shares": 3.1565657781953824,
+          "price": 633.5999755859375,
+          "value": 2000.0
+        },
+        "MSFT": {
+          "shares": 1.9206638294360487,
+          "price": 390.489990234375,
+          "value": 750.0
+        },
+        "AAPL": {
+          "shares": 2.430094249212019,
+          "price": 308.6300048828125,
+          "value": 750.0
+        },
+        "AGGH.L": {
+          "shares": 191.80972475304497,
+          "price": 5.2135,
+          "value": 999.9999999999999
+        },
+        "BTC-EUR": {
+          "shares": 0.018401701524832555,
+          "price": 54342.80078125,
+          "value": 999.9999999999999
+        }
+      },
+      "note": "INICIO DE CARTERA - 2026-07-03. Capital inicial: 10.000 EUR. Portafolio construido desde cero con 6 posiciones: VWCE.DE (35%, 3.500€) como núcleo global, EQQQ.DE (20%, 2.000€) sesgo tech/growth, MSFT (7.5%, 750€) y AAPL (7.5%, 750€) como acciones individuales de calidad, AGGH.L (10%, 1.000€) bonos para estabilidad, BTC-EUR (10%, 1.000€) apuesta asimétrica cripto. Reserva cash: 1.000€ (10%). Total invertido: 9.000€."
+    }
+  ]
+}

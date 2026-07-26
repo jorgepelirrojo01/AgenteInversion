@@ -1,0 +1,52 @@
+name: Bot de Telegram
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'   # cada 10 minutos
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: escrituras-al-repo
+  cancel-in-progress: false
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Ejecutar bot
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python telegram_bot.py
+
+      - name: Guardar cambios (config del bot)
+        run: |
+          git config user.name "agente-inversion-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add bot_config.json
+          git diff --cached --quiet && { echo "Sin cambios"; exit 0; }
+          git commit -m "Bot: actualizar config"
+          exito=0
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && exito=1 && break
+            echo "Push rechazado (intento $i), reintentando..."
+            sleep 5
+          done
+          if [ "$exito" != "1" ]; then
+            echo "ERROR: no se pudo hacer push tras 3 intentos."
+            exit 1
+          fi
