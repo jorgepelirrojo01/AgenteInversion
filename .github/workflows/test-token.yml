@@ -1,0 +1,16 @@
+name: Test PAT_TOKEN
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comprobar longitud del PAT_TOKEN
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          echo "Longitud del PAT_TOKEN: ${#PAT_TOKEN} caracteres"
+          echo "Primeros 8 caracteres (para confirmar visualmente el prefijo, sin revelar el resto):"
+          echo "${PAT_TOKEN:0:8}..."
