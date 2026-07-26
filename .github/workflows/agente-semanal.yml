@@ -74,3 +74,15 @@ jobs:
             echo "ERROR: no se pudo hacer push tras 3 intentos. El estado NO se guardo."
             exit 1
           fi
+
+      # Ultima linea de defensa: si CUALQUIER paso anterior fallo (checkout,
+      # instalar dependencias, el propio agente, o el push), este paso se
+      # ejecuta igualmente y manda un aviso via curl, sin depender de Python
+      # ni de nada que pudiera estar roto.
+      - name: Aviso de emergencia si algun paso anterior fallo
+        if: failure()
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+            -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+            -d text="⚠️ El workflow 'Revision de cartera' ha fallado en uno de sus pasos ANTES de que el agente pudiera avisar por su cuenta (o el guardado final fallo). Revisa el log completo en la pestaña Actions de GitHub para ver el detalle exacto. Si esto ocurrio durante una revision automatica, la cartera puede no haberse actualizado." \
+            > /dev/null || true

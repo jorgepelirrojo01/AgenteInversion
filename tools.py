@@ -8,14 +8,18 @@ import os
 from datetime import date
 
 from claude_agent_sdk import tool, create_sdk_mcp_server
-from market import get_price as _get_price
+from market import get_price_con_diagnostico
 import market_research
 
 STATE_PATH = os.path.join(os.path.dirname(__file__), "portfolio_state.json")
-
-# Por debajo de esta cantidad de participaciones, consideramos la posicion
-# cerrada (evita "dust": restos infimos que ensucian la cartera para siempre).
 DUST_THRESHOLD = 1e-6
+
+
+def _get_price(ticker: str) -> float:
+    price, motivo = get_price_con_diagnostico(ticker)
+    if price is None:
+        raise ValueError(motivo)
+    return price
 
 
 def _load_state():
@@ -52,7 +56,9 @@ async def get_portfolio(args):
             total += value
             lines.append(f"  {ticker}: {pos['shares']:.6f} uds @ coste medio {pos['avg_price']:.2f} | precio actual {price:.2f} | valor {value:.2f} EUR")
         except Exception as e:
-            lines.append(f"  {ticker}: error al valorar ({e})")
+            valor_estimado = pos["avg_price"] * pos["shares"]
+            total += valor_estimado
+            lines.append(f"  {ticker}: precio no disponible ({e}). Usando coste de compra: ~{valor_estimado:.2f} EUR")
     lines.append(f"VALOR TOTAL ESTIMADO: {total:.2f} EUR")
     return {"content": [{"type": "text", "text": "\n".join(lines)}]}
 
@@ -75,7 +81,7 @@ async def buy(args):
     try:
         price = _get_price(ticker)
     except Exception as e:
-        return {"content": [{"type": "text", "text": f"No se pudo obtener precio de {ticker}: {e}"}]}
+        return {"content": [{"type": "text", "text": f"No se pudo obtener precio de {ticker}, compra cancelada. Motivo: {e}"}]}
 
     shares = amount / price
     pos = state["positions"].get(ticker, {"shares": 0.0, "avg_price": 0.0})
@@ -112,7 +118,6 @@ async def sell(args):
     if not pos:
         return {"content": [{"type": "text", "text": f"No tienes ninguna posicion en {ticker}."}]}
 
-    # shares = -1 (o cualquier negativo) significa "vender todo"
     if shares_to_sell < 0:
         shares_to_sell = pos["shares"]
 
@@ -124,9 +129,9 @@ async def sell(args):
     try:
         price = _get_price(ticker)
     except Exception as e:
-        return {"content": [{"type": "text", "text": f"No se pudo obtener precio de {ticker}: {e}"}]}
+        return {"content": [{"type": "text", "text": f"No se pudo obtener precio de {ticker}, venta cancelada. Motivo: {e}"}]}
 
-    shares_to_sell = min(shares_to_sell, pos["shares"])  # no vender mas de lo que hay
+    shares_to_sell = min(shares_to_sell, pos["shares"])
     proceeds = shares_to_sell * price
     pos["shares"] -= shares_to_sell
     if pos["shares"] <= DUST_THRESHOLD:
@@ -159,8 +164,10 @@ async def save_snapshot(args):
             value = price * pos["shares"]
             total += value
             positions_snapshot[ticker] = {"shares": pos["shares"], "price": price, "value": value}
-        except Exception:
-            positions_snapshot[ticker] = {"shares": pos["shares"], "price": None, "value": None}
+        except Exception as e:
+            valor_estimado = pos["avg_price"] * pos["shares"]
+            total += valor_estimado
+            positions_snapshot[ticker] = {"shares": pos["shares"], "price": None, "value": valor_estimado, "error": str(e)}
 
     snapshot = {
         "date": str(date.today()),

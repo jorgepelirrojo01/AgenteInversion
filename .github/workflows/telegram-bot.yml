@@ -50,3 +50,15 @@ jobs:
             echo "ERROR: no se pudo hacer push tras 3 intentos."
             exit 1
           fi
+
+      # Este paso se ejecuta SIEMPRE, incluso si algun paso anterior fallo
+      # (checkout, instalar dependencias, el propio script...). Es la ultima
+      # linea de defensa: garantiza que SIEMPRE llega un aviso a Telegram si
+      # algo se rompio antes de que Python pudiera avisar por su cuenta.
+      - name: Aviso de emergencia si algun paso anterior fallo
+        if: failure()
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+            -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+            -d text="⚠️ El workflow 'Bot de Telegram' ha fallado en uno de sus pasos (checkout, instalar dependencias, o el propio script) ANTES de que el bot pudiera avisar por su cuenta. Revisa el log completo en la pestaña Actions de GitHub para ver el detalle exacto." \
+            > /dev/null || true
