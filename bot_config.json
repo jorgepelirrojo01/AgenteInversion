@@ -1,8 +1,11 @@
 {
   "hora_aviso": "11:00",
-  "offset": 839884268,
+  "offset": 839884269,
   "ultimo_envio": "2026-07-26",
   "pausado": false,
   "alertados_hoy": {},
-  "propuesta_pendiente": null
+  "propuesta_pendiente": {
+    "instrucciones": "Vende toda la posición de AGGH.L (yfinance no puede obtener su precio de forma fiable de manera recurrente) y sustitúyela por IEAG.L u otro ETF de bonos globales con datos de precio confirmados como estables, manteniendo aproximadamente el mismo peso (~1000€) en la parte de bonos del núcleo.",
+    "fecha": "2026-07-26T19:07:04.829542+00:00"
+  }
 }
