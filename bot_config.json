@@ -1,11 +1,8 @@
 {
   "hora_aviso": "11:00",
-  "offset": 839884266,
+  "offset": 839884268,
   "ultimo_envio": "2026-07-26",
   "pausado": false,
   "alertados_hoy": {},
-  "propuesta_pendiente": {
-    "instrucciones": "La cartera se reinició por un problema técnico y perdió posiciones que tenía esta mañana. Para que tengas contexto de por dónde iba: a las 11:25 la cartera tenía estas 9 posiciones: VWCE.DE (3466,24€), EQQQ.DE (765,00€), MSFT (1179,34€), AAPL (809,27€), AGGH.L (1000,00€), BTC-EUR (1044,03€), META (612,65€), NVDA (424,66€) y GOOGL (667,03€), con 8,59€ en cash. Es decir, habías reincorporado tecnológicas individuales (META, NVDA, GOOGL) además de MSFT y AAPL, dentro de la mitad \"satélite\" de la es",
-    "fecha": "2026-07-26T18:55:19.532234+00:00"
-  }
+  "propuesta_pendiente": null
 }
