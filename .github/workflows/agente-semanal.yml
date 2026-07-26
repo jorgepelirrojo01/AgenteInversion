@@ -1,9 +1,18 @@
-name: Bot de Telegram
+name: Revision de cartera
 
 on:
   schedule:
-    - cron: '*/10 * * * *'   # cada 10 minutos
+    - cron: '0 9 1,15 * *'   # dias 1 y 15 de cada mes a las 9:00 UTC (~cada 2 semanas)
   workflow_dispatch:
+    inputs:
+      mensaje:
+        description: 'Instruccion personalizada para el agente (opcional)'
+        required: false
+        default: ''
+      modo:
+        description: 'proponer (no ejecuta) o ejecutar (opera de verdad)'
+        required: false
+        default: 'ejecutar'
 
 permissions:
   contents: write
@@ -13,33 +22,48 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  bot:
+  ejecutar-agente:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Configurar Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
 
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
-      - name: Ejecutar bot
+      - name: Ejecutar el agente
         env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
-        run: python telegram_bot.py
+          AGENT_MODE: ${{ github.event.inputs.modo || 'ejecutar' }}
+          RESPETAR_PAUSA: ${{ github.event_name == 'schedule' && '1' || '0' }}
+          MENSAJE: ${{ github.event.inputs.mensaje }}
+        run: |
+          if [ -n "$MENSAJE" ]; then
+            python agent.py "$MENSAJE"
+          else
+            python agent.py
+          fi
 
-      - name: Guardar cambios (config del bot)
+      - name: Guardar el nuevo estado en el repositorio
         run: |
           git config user.name "agente-inversion-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add bot_config.json
-          git diff --cached --quiet && { echo "Sin cambios"; exit 0; }
-          git commit -m "Bot: actualizar config"
+          git add portfolio_state.json bot_config.json
+          git diff --cached --quiet && { echo "Sin cambios que guardar"; exit 0; }
+          git commit -m "Snapshot cartera $(date +%F)"
           exito=0
           for i in 1 2 3; do
             git pull --rebase origin main && git push && exito=1 && break
@@ -47,6 +71,6 @@ jobs:
             sleep 5
           done
           if [ "$exito" != "1" ]; then
-            echo "ERROR: no se pudo hacer push tras 3 intentos."
+            echo "ERROR: no se pudo hacer push tras 3 intentos. El estado NO se guardo."
             exit 1
           fi
