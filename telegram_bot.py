@@ -26,7 +26,7 @@ try:
     from zoneinfo import ZoneInfo
     MADRID_TZ = ZoneInfo("Europe/Madrid")
 except Exception:
-    MADRID_TZ = None  # fallback si el sistema no tiene tzdata
+    MADRID_TZ = None
 
 import requests
 
@@ -39,10 +39,10 @@ CONFIG_PATH = os.path.join(REPO_DIR, "bot_config.json")
 TELEGRAM_BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 TELEGRAM_CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
-GITHUB_REPOSITORY = os.environ.get("GITHUB_REPOSITORY")  # owner/repo, lo pone Actions solo
+GITHUB_REPOSITORY = os.environ.get("GITHUB_REPOSITORY")
 
-BENCHMARK_TICKER = "VWCE.DE"   # usado por /comparar
-UMBRAL_ALERTA_PCT = 5.0        # variacion en 24h que dispara una alerta automatica
+BENCHMARK_TICKER = "VWCE.DE"
+UMBRAL_ALERTA_PCT = 5.0
 
 
 def load_json(path, default):
@@ -61,7 +61,6 @@ def save_json(path, data):
 
 
 def capital_inicial() -> float:
-    """Lee el capital inicial del propio estado (fuente unica de verdad)."""
     state = load_json(STATE_PATH, {})
     return float(state.get("capital_inicial", 10000.0))
 
@@ -69,17 +68,10 @@ def capital_inicial() -> float:
 def ahora_madrid() -> datetime:
     if MADRID_TZ is not None:
         return datetime.now(MADRID_TZ)
-    # Fallback aproximado si no hay tzdata: UTC+2 (horario de verano)
     return datetime.now(timezone.utc) + timedelta(hours=2)
 
 
 def current_total_value():
-    """
-    Devuelve (total, detalle, precios_actuales, state).
-    'detalle' es una lista de (ticker, valor, es_estimado) -- es_estimado=True
-    cuando no se pudo obtener el precio real y se uso el coste de compra como
-    aproximacion (para no ocultar ese hecho en los mensajes).
-    """
     state = load_json(STATE_PATH, {})
     total = state.get("cash", 0.0)
     detalle = []
@@ -89,7 +81,7 @@ def current_total_value():
         try:
             price = get_price(ticker)
         except Exception:
-            price = pos.get("avg_price", 0.0)  # fallback: precio de compra
+            price = pos.get("avg_price", 0.0)
             es_estimado = True
         precios_actuales[ticker] = price
         valor = price * pos["shares"]
@@ -105,12 +97,6 @@ def pct_change(old, new):
 
 
 def historical_portfolio_value(state, days_ago: int, precios_actuales: dict):
-    """
-    Valor aproximado de la cartera hace N dias: posiciones ACTUALES valoradas
-    al precio de aquel momento. Si falla el historico de un ticker, se usa su
-    precio actual (se asume "sin cambio") en vez de excluirlo, que distorsionaria
-    la comparacion.
-    """
     total = state.get("cash", 0.0)
     for ticker, pos in state.get("positions", {}).items():
         try:
@@ -231,8 +217,6 @@ def build_comparar_message() -> str:
 
 
 def send_telegram(text: str):
-    """Envia un mensaje. Si el Markdown falla (caracteres raros), reintenta en texto plano.
-    Nunca lanza excepcion hacia arriba: un fallo de envio no debe romper el ciclo."""
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     try:
         resp = requests.post(url, json={"chat_id": TELEGRAM_CHAT_ID, "text": text, "parse_mode": "Markdown"}, timeout=20)
@@ -271,7 +255,15 @@ def check_alerts(config):
 
 
 def _dispatch_agente(mensaje: str, modo: str) -> int:
+    """
+    Lanza el workflow del agente. Devuelve el status_code (o 0 si falta config).
+    IMPORTANTE (diagnostico): si falla, se imprime en el log de Actions el
+    texto exacto que devuelve la API de GitHub -- eso dice la causa real
+    (token invalido, sin permiso, workflow no encontrado, etc.), en vez de
+    quedarnos solo con el numero 403 sin explicacion.
+    """
     if not GITHUB_TOKEN or not GITHUB_REPOSITORY:
+        print("Falta GITHUB_TOKEN o GITHUB_REPOSITORY en el entorno.")
         return 0
     url = f"https://api.github.com/repos/{GITHUB_REPOSITORY}/actions/workflows/agente-semanal.yml/dispatches"
     try:
@@ -279,8 +271,15 @@ def _dispatch_agente(mensaje: str, modo: str) -> int:
             "Authorization": f"Bearer {GITHUB_TOKEN}",
             "Accept": "application/vnd.github+json",
         }, json={"ref": "main", "inputs": {"mensaje": mensaje[:500], "modo": modo}}, timeout=20)
+        if resp.status_code != 204:
+            # No revela el token, solo la respuesta de la API -- segura de imprimir
+            print(f"[DIAGNOSTICO] dispatch fallo con HTTP {resp.status_code}")
+            print(f"[DIAGNOSTICO] URL usada: {url}")
+            print(f"[DIAGNOSTICO] Respuesta de GitHub: {resp.text[:1000]}")
+            print(f"[DIAGNOSTICO] Longitud del token usado: {len(GITHUB_TOKEN)} caracteres")
         return resp.status_code
-    except Exception:
+    except Exception as e:
+        print(f"[DIAGNOSTICO] Excepcion al llamar a la API de GitHub: {e}")
         return -1
 
 
@@ -295,7 +294,7 @@ def start_proposal(instrucciones: str):
         save_json(CONFIG_PATH, config)
         send_telegram("Pidiendo al agente una propuesta (sin ejecutar nada aun). Te mando el plan en 1-2 minutos. Luego responde /confirmar o /cancelar.")
     else:
-        send_telegram(f"No se pudo pedir la propuesta (HTTP {code}).")
+        send_telegram(f"No se pudo pedir la propuesta (HTTP {code}). Revisa el log de Actions del bot para ver el detalle exacto del error.")
 
 
 def confirm_proposal():
