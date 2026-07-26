@@ -2,7 +2,7 @@
   "created_at": "2026-07-03",
   "currency": "EUR",
   "capital_inicial": 10000.0,
-  "cash": 6.159976806640316,
+  "cash": 6.159976806640202,
   "positions": {
     "VWCE.DE": {
       "shares": 21.099589444023756,
@@ -20,10 +20,6 @@
       "shares": 2.430094249212019,
       "avg_price": 308.6300048828125
     },
-    "AGGH.L": {
-      "shares": 191.80972475304497,
-      "avg_price": 5.2135
-    },
     "BTC-EUR": {
       "shares": 0.018401701524832555,
       "avg_price": 54342.80078125
@@ -39,6 +35,10 @@
     "GOOGL": {
       "shares": 2.0861638217698553,
       "avg_price": 319.739990234375
+    },
+    "IEAG.L": {
+      "shares": 9.463424030737645,
+      "avg_price": 105.66999816894531
     }
   },
   "transactions": [
@@ -140,6 +140,24 @@
       "price": 319.739990234375,
       "shares": 2.0861638217698553,
       "reason": "Restauración de cartera tras reset técnico: reponer posición GOOGL ~667€ (satélite tecnológico)"
+    },
+    {
+      "date": "2026-07-26",
+      "type": "sell",
+      "ticker": "AGGH.L",
+      "amount_eur": 999.9999999999999,
+      "price": 5.2135,
+      "shares": 191.80972475304497,
+      "reason": "Sustitución por fallo de datos: yfinance no actualiza el precio de AGGH.L de forma fiable (precio congelado en 5.21 desde la compra). Se reemplaza por IEAG.L, que sí tiene datos estables."
+    },
+    {
+      "date": "2026-07-26",
+      "type": "buy",
+      "ticker": "IEAG.L",
+      "amount_eur": 1000.0,
+      "price": 105.66999816894531,
+      "shares": 9.463424030737645,
+      "reason": "Sustitución de AGGH.L como componente de renta fija del núcleo. IEAG.L (iShares Core Euro Aggregate Bond UCITS ETF) ofrece el mismo perfil conservador con precio actualizable en yfinance. Mantiene peso ~10% del portfolio en bonos."
     }
   ],
   "snapshots": [
@@ -240,6 +258,59 @@
         }
       },
       "note": "Restauración tras reset técnico: reequilibrado EQQQ.DE (vendido exceso de 1156€), y recompradas posiciones META (613€), NVDA (425€), GOOGL (667€) y reforzado MSFT (+446€). Cartera repuesta a estructura de las 11:25 con 9 posiciones: VWCE.DE+EQQQ.DE+AGGH.L (núcleo) y MSFT+AAPL+META+NVDA+GOOGL+BTC-EUR (satélites). Cash residual: 6,16€."
+    },
+    {
+      "date": "2026-07-26",
+      "total_value": 9976.366823709257,
+      "cash": 6.159976806640202,
+      "positions": {
+        "VWCE.DE": {
+          "shares": 21.099589444023756,
+          "price": 164.27999877929688,
+          "value": 3466.2405281078877
+        },
+        "EQQQ.DE": {
+          "shares": 1.2565657781953825,
+          "price": 608.7999877929688,
+          "value": 764.9972304264112
+        },
+        "MSFT": {
+          "shares": 3.0896970642528547,
+          "price": 381.70001220703125,
+          "value": 1179.3374071413432
+        },
+        "AAPL": {
+          "shares": 2.430094249212019,
+          "price": 333.0199890136719,
+          "value": 809.2699601747738
+        },
+        "BTC-EUR": {
+          "shares": 0.018401701524832555,
+          "price": 56843.75,
+          "value": 1046.0217210522005
+        },
+        "META": {
+          "shares": 1.0293351660595351,
+          "price": 595.1900024414062,
+          "value": 612.65
+        },
+        "NVDA": {
+          "shares": 2.0530845461159357,
+          "price": 206.83999633789062,
+          "value": 424.65999999999997
+        },
+        "GOOGL": {
+          "shares": 2.0861638217698553,
+          "price": 319.739990234375,
+          "value": 667.03
+        },
+        "IEAG.L": {
+          "shares": 9.463424030737645,
+          "price": 105.66999816894531,
+          "value": 1000.0
+        }
+      },
+      "note": "Sustitución de AGGH.L por IEAG.L: vendida posición completa de 191.81 uds AGGH.L (1000€) por precio congelado en yfinance, y comprados 9.46 uds IEAG.L (1000€) como nuevo componente de renta fija del núcleo. Peso bonos mantenido ~10%. Cash residual 6.16€."
     }
   ]
 }
