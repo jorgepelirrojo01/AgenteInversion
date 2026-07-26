@@ -1,11 +1,8 @@
 {
   "hora_aviso": "11:00",
-  "offset": 839884264,
+  "offset": 839884268,
   "ultimo_envio": "2026-07-26",
   "pausado": false,
   "alertados_hoy": {},
-  "propuesta_pendiente": {
-    "instrucciones": "Ejecuta el plan de reconstruccion que propusiste (vender ~1.90 uds de EQQQ, recomprar META/NVDA/GOOGL y ampliar MSFT segun tu propuesta anterior), pero esta vez incluye TAMBIEN vender AGGH.L por completo y sustituirlo por un ETF de bonos con mejor liquidez y datos fiables (ej. IEAG.L), manteniendo el mismo peso aproximado (~1000€) en la parte de bonos.",
-    "fecha": "2026-07-26T18:46:41.040864+00:00"
-  }
+  "propuesta_pendiente": null
 }
