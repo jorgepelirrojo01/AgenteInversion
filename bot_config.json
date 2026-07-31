@@ -4,7 +4,9 @@
   "ultimo_envio": "2026-07-31",
   "pausado": false,
   "alertados_hoy": {
-    "IEAG.L": "2026-07-31"
+    "IEAG.L": "2026-07-31",
+    "AAPL": "2026-07-31",
+    "GOOGL": "2026-07-31"
   },
   "propuesta_pendiente": null
 }
