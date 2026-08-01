@@ -2,7 +2,7 @@
   "created_at": "2026-07-03",
   "currency": "EUR",
   "capital_inicial": 10000.0,
-  "cash": 6.159976806640202,
+  "cash": 4.407977905273015,
   "positions": {
     "VWCE.DE": {
       "shares": 21.099589444023756,
@@ -13,7 +13,7 @@
       "avg_price": 633.5999755859375
     },
     "MSFT": {
-      "shares": 3.0896970642528547,
+      "shares": 2.189697064252855,
       "avg_price": 387.1641701835477
     },
     "AAPL": {
@@ -39,6 +39,10 @@
     "IEAG.L": {
       "shares": 9.463424030737645,
       "avg_price": 105.66999816894531
+    },
+    "AMZN": {
+      "shares": 1.5465057101630013,
+      "avg_price": 271.5799865722656
     }
   },
   "transactions": [
@@ -158,6 +162,24 @@
       "price": 105.66999816894531,
       "shares": 9.463424030737645,
       "reason": "Sustitución de AGGH.L como componente de renta fija del núcleo. IEAG.L (iShares Core Euro Aggregate Bond UCITS ETF) ofrece el mismo perfil conservador con precio actualizable en yfinance. Mantiene peso ~10% del portfolio en bonos."
+    },
+    {
+      "date": "2026-08-01",
+      "type": "sell",
+      "ticker": "MSFT",
+      "amount_eur": 418.2480010986328,
+      "price": 464.7200012207031,
+      "shares": 0.9,
+      "reason": "MSFT supera el 14% de la cartera, muy por encima del límite de 10-12% para satélites. Toma parcial de beneficios (+20% desde coste). Se reduce a ~10% del total."
+    },
+    {
+      "date": "2026-08-01",
+      "type": "buy",
+      "ticker": "AMZN",
+      "amount_eur": 420.0,
+      "price": 271.5799865722656,
+      "shares": 1.5465057101630013,
+      "reason": "Nueva posición satélite. Q2 2026: EPS $1.97 vs $1.82 estimado, AWS +37% YoY acelerando. CEO confirma demanda supera capacidad incluso con $220B capex. PER 21.8x / PEG 1.22 razonables. Diversifica satélites con la mejor aceleración cloud del mercado."
     }
   ],
   "snapshots": [
@@ -311,6 +333,64 @@
         }
       },
       "note": "Sustitución de AGGH.L por IEAG.L: vendida posición completa de 191.81 uds AGGH.L (1000€) por precio congelado en yfinance, y comprados 9.46 uds IEAG.L (1000€) como nuevo componente de renta fija del núcleo. Peso bonos mantenido ~10%. Cash residual 6.16€."
+    },
+    {
+      "date": "2026-08-01",
+      "total_value": 10114.515172334137,
+      "cash": 4.407977905273015,
+      "positions": {
+        "VWCE.DE": {
+          "shares": 21.099589444023756,
+          "price": 162.9600067138672,
+          "value": 3438.3892374579527
+        },
+        "EQQQ.DE": {
+          "shares": 1.2565657781953825,
+          "price": 596.5,
+          "value": 749.5414866935457
+        },
+        "MSFT": {
+          "shares": 2.189697064252855,
+          "price": 464.7200012207031,
+          "value": 1017.5960223725567
+        },
+        "AAPL": {
+          "shares": 2.430094249212019,
+          "price": 308.9100036621094,
+          "value": 750.6804234233557
+        },
+        "BTC-EUR": {
+          "shares": 0.018401701524832555,
+          "price": 54681.33984375,
+          "value": 1006.2296947826216
+        },
+        "META": {
+          "shares": 1.0293351660595351,
+          "price": 556.7100219726562,
+          "value": 573.0412029142316
+        },
+        "NVDA": {
+          "shares": 2.0530845461159357,
+          "price": 200.75,
+          "value": 412.1567226327741
+        },
+        "GOOGL": {
+          "shares": 2.0861638217698553,
+          "price": 356.1300048828125,
+          "value": 742.9455320332453
+        },
+        "IEAG.L": {
+          "shares": 9.463424030737645,
+          "price": 105.62000274658203,
+          "value": 999.5268721185805
+        },
+        "AMZN": {
+          "shares": 1.5465057101630013,
+          "price": 271.5799865722656,
+          "value": 420.0
+        }
+      },
+      "note": "Revisión 2026-08-01: Recorte de MSFT (14.2%→10.1%) tomando beneficios +20%. Nueva posición AMZN (4.2%) tras Q2 espectacular: AWS +37% YoY, EPS y revenue beat. META en vigilancia por capex que aplasta FCF. NVDA infraponderado pero se espera a earnings del 26-ago. Cartera total +1.15% desde inicio."
     }
   ]
 }
