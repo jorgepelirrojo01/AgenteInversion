@@ -3,6 +3,8 @@
   "offset": 839884272,
   "ultimo_envio": "2026-08-09",
   "pausado": false,
-  "alertados_hoy": {},
+  "alertados_hoy": {
+    "IEAG.L": "2026-08-10"
+  },
   "propuesta_pendiente": null
 }
