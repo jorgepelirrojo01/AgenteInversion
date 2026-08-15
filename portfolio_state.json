@@ -2,11 +2,11 @@
   "created_at": "2026-07-03",
   "currency": "EUR",
   "capital_inicial": 10000.0,
-  "cash": 4.407977905273015,
+  "cash": 9.590170044722072,
   "positions": {
     "VWCE.DE": {
-      "shares": 21.099589444023756,
-      "avg_price": 165.8800048828125
+      "shares": 25.24454444165521,
+      "avg_price": 166.3725804086888
     },
     "EQQQ.DE": {
       "shares": 1.2565657781953825,
@@ -36,13 +36,13 @@
       "shares": 2.0861638217698553,
       "avg_price": 319.739990234375
     },
-    "IEAG.L": {
-      "shares": 9.463424030737645,
-      "avg_price": 105.66999816894531
-    },
     "AMZN": {
       "shares": 1.5465057101630013,
       "avg_price": 271.5799865722656
+    },
+    "AIR.PA": {
+      "shares": 2.414113346028684,
+      "avg_price": 215.39999389648438
     }
   },
   "transactions": [
@@ -180,6 +180,33 @@
       "price": 271.5799865722656,
       "shares": 1.5465057101630013,
       "reason": "Nueva posición satélite. Q2 2026: EPS $1.97 vs $1.82 estimado, AWS +37% YoY acelerando. CEO confirma demanda supera capacidad incluso con $220B capex. PER 21.8x / PEG 1.22 razonables. Diversifica satélites con la mejor aceleración cloud del mercado."
+    },
+    {
+      "date": "2026-08-15",
+      "type": "sell",
+      "ticker": "IEAG.L",
+      "amount_eur": 1225.1821921394492,
+      "price": 129.465,
+      "shares": 9.463424030737645,
+      "reason": "ETF de bonos en máximos de 52 semanas (−0% del máx), upside limitado con ECB cerca del suelo de tipos. Ganancia del +22,5% realizada. Rotación hacia activos con mayor potencial de retorno en cartera agresiva."
+    },
+    {
+      "date": "2026-08-15",
+      "type": "buy",
+      "ticker": "VWCE.DE",
+      "amount_eur": 700.0,
+      "price": 168.88,
+      "shares": 4.144954997631454,
+      "reason": "Refuerzo del núcleo tras venta de IEAG.L para mantener ~50% core. ETF global diversificado, base de la estrategia de largo plazo."
+    },
+    {
+      "date": "2026-08-15",
+      "type": "buy",
+      "ticker": "AIR.PA",
+      "amount_eur": 520.0,
+      "price": 215.39999389648438,
+      "shares": 2.414113346028684,
+      "reason": "Nuevo satélite en industriales europeos. Airbus: crecimiento beneficios +126%, ingresos +28%, guidance 2026 sólido (870 entregas, EBIT 7.5B EUR). Morgan Stanley PT 255 EUR (+18% upside). Beta baja 0.88, backlog plurianual, beneficiada por rearme europeo y recuperación aviación."
     }
   ],
   "snapshots": [
@@ -391,6 +418,64 @@
         }
       },
       "note": "Revisión 2026-08-01: Recorte de MSFT (14.2%→10.1%) tomando beneficios +20%. Nueva posición AMZN (4.2%) tras Q2 espectacular: AWS +37% YoY, EPS y revenue beat. META en vigilancia por capex que aplasta FCF. NVDA infraponderado pero se espera a earnings del 26-ago. Cartera total +1.15% desde inicio."
+    },
+    {
+      "date": "2026-08-15",
+      "total_value": 10614.069300397394,
+      "cash": 9.590170044722072,
+      "positions": {
+        "VWCE.DE": {
+          "shares": 25.24454444165521,
+          "price": 168.88,
+          "value": 4263.298665306732
+        },
+        "EQQQ.DE": {
+          "shares": 1.2565657781953825,
+          "price": 632.2,
+          "value": 794.4008849751209
+        },
+        "MSFT": {
+          "shares": 2.189697064252855,
+          "price": 495.3999938964844,
+          "value": 1084.775912266014
+        },
+        "AAPL": {
+          "shares": 2.430094249212019,
+          "price": 305.92999267578125,
+          "value": 743.4387158628911
+        },
+        "BTC-EUR": {
+          "shares": 0.018401701524832555,
+          "price": 54415.91015625,
+          "value": 1001.3453368974169
+        },
+        "META": {
+          "shares": 1.0293351660595351,
+          "price": 589.8499755859375,
+          "value": 607.1533225699637
+        },
+        "NVDA": {
+          "shares": 2.0530845461159357,
+          "price": 225.16000366210938,
+          "value": 462.27252392208425
+        },
+        "GOOGL": {
+          "shares": 2.0861638217698553,
+          "price": 345.8999938964844,
+          "value": 721.6040532172594
+        },
+        "AMZN": {
+          "shares": 1.5465057101630013,
+          "price": 262.6499938964844,
+          "value": 406.18971533519056
+        },
+        "AIR.PA": {
+          "shares": 2.414113346028684,
+          "price": 215.39999389648438,
+          "value": 520.0
+        }
+      },
+      "note": "Rotación IEAG.L → VWCE.DE + AIR.PA. Vendido ETF de bonos en máximos +22.5%. Comprado 700 EUR VWCE.DE (refuerzo núcleo) y 520 EUR AIR.PA como nuevo satélite industrial (Airbus, MS PT 255 EUR, crecimiento beneficios +126%). Cartera: +6.14% desde inicio."
     }
   ]
 }
