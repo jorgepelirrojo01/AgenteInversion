@@ -3,6 +3,8 @@
   "offset": 839884274,
   "ultimo_envio": "2026-08-20",
   "pausado": false,
-  "alertados_hoy": {},
+  "alertados_hoy": {
+    "BTC-EUR": "2026-08-21"
+  },
   "propuesta_pendiente": null
 }
