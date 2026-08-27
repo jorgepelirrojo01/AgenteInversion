@@ -1,8 +1,10 @@
 {
   "hora_aviso": "11:00",
   "offset": 839884274,
-  "ultimo_envio": "2026-08-26",
+  "ultimo_envio": "2026-08-27",
   "pausado": false,
-  "alertados_hoy": {},
+  "alertados_hoy": {
+    "NVDA": "2026-08-27"
+  },
   "propuesta_pendiente": null
 }
