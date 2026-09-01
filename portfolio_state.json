@@ -2,11 +2,11 @@
   "created_at": "2026-07-03",
   "currency": "EUR",
   "capital_inicial": 10000.0,
-  "cash": 9.590170044722072,
+  "cash": 0.04534582597207759,
   "positions": {
     "VWCE.DE": {
-      "shares": 25.24454444165521,
-      "avg_price": 166.3725804086888
+      "shares": 26.31451318021582,
+      "avg_price": 166.37206890422488
     },
     "EQQQ.DE": {
       "shares": 1.2565657781953825,
@@ -21,7 +21,7 @@
       "avg_price": 308.6300048828125
     },
     "BTC-EUR": {
-      "shares": 0.018401701524832555,
+      "shares": 0.015901701524832557,
       "avg_price": 54342.80078125
     },
     "META": {
@@ -207,6 +207,24 @@
       "price": 215.39999389648438,
       "shares": 2.414113346028684,
       "reason": "Nuevo satélite en industriales europeos. Airbus: crecimiento beneficios +126%, ingresos +28%, guidance 2026 sólido (870 entregas, EBIT 7.5B EUR). Morgan Stanley PT 255 EUR (+18% upside). Beta baja 0.88, backlog plurianual, beneficiada por rearme europeo y recuperación aviación."
+    },
+    {
+      "date": "2026-09-01",
+      "type": "sell",
+      "ticker": "BTC-EUR",
+      "amount_eur": 168.45517578125,
+      "price": 67382.0703125,
+      "shares": 0.0025,
+      "reason": "BTC alcanzó 11.6% del portfolio, superando el límite superior de ~10-12% por satélite. Recorte técnico de disciplina para mantener concentración controlada. Aprovechamos +23.7% de ganancia latente."
+    },
+    {
+      "date": "2026-09-01",
+      "type": "buy",
+      "ticker": "VWCE.DE",
+      "amount_eur": 178.0,
+      "price": 166.36000061035156,
+      "shares": 1.069968738560609,
+      "reason": "Rebalanceo hacia el núcleo (core estaba al 46.5% vs objetivo 50%). Fondos procedentes del recorte técnico de BTC. VWCE es el ETF global de referencia de la cartera y refuerza la diversificación estructural."
     }
   ],
   "snapshots": [
@@ -476,6 +494,64 @@
         }
       },
       "note": "Rotación IEAG.L → VWCE.DE + AIR.PA. Vendido ETF de bonos en máximos +22.5%. Comprado 700 EUR VWCE.DE (refuerzo núcleo) y 520 EUR AIR.PA como nuevo satélite industrial (Airbus, MS PT 255 EUR, crecimiento beneficios +126%). Cartera: +6.14% desde inicio."
+    },
+    {
+      "date": "2026-09-01",
+      "total_value": 10700.480895477143,
+      "cash": 0.04534582597207759,
+      "positions": {
+        "VWCE.DE": {
+          "shares": 26.31451318021582,
+          "price": 166.36000061035156,
+          "value": 4377.682428721808
+        },
+        "EQQQ.DE": {
+          "shares": 1.2565657781953825,
+          "price": 612.9000244140625,
+          "value": 770.1491961338254
+        },
+        "MSFT": {
+          "shares": 2.189697064252855,
+          "price": 503.25,
+          "value": 1101.9650475852493
+        },
+        "AAPL": {
+          "shares": 2.430094249212019,
+          "price": 322.32000732421875,
+          "value": 783.2679962045598
+        },
+        "BTC-EUR": {
+          "shares": 0.015901701524832557,
+          "price": 67385.5625,
+          "value": 1071.5451019579496
+        },
+        "META": {
+          "shares": 1.0293351660595351,
+          "price": 566.4000244140625,
+          "value": 583.0154631863737
+        },
+        "NVDA": {
+          "shares": 2.0530845461159357,
+          "price": 217.13999938964844,
+          "value": 445.80677709051093
+        },
+        "GOOGL": {
+          "shares": 2.0861638217698553,
+          "price": 335.8900146484375,
+          "value": 700.7215966533171
+        },
+        "AMZN": {
+          "shares": 1.5465057101630013,
+          "price": 254.0399932861328,
+          "value": 392.8743002267749
+        },
+        "AIR.PA": {
+          "shares": 2.414113346028684,
+          "price": 196.10000610351562,
+          "value": 473.40764189080346
+        }
+      },
+      "note": "Revisión 2026-09-01: Cartera +6.94% (10.694€). Recorte técnico BTC-EUR (0.0025 uds, 168€) por exceso de concentración al 11.6% del portfolio (límite ~10-12%). Proceeds reinvertidos en VWCE.DE (+1.07 uds, 178€) para acercar el núcleo al 50% objetivo (estaba al 46.5%). META y AIR.PA mantenidas: tesis intactas pese a caídas temporales. NVDA identificada como mayor potencial (PEG 0.56, $1T order book) pero sin cash adicional para ampliar sin vender otras posiciones de calidad."
     }
   ]
 }
