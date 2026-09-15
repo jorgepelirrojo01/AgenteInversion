@@ -2,7 +2,7 @@
   "created_at": "2026-07-03",
   "currency": "EUR",
   "capital_inicial": 10000.0,
-  "cash": 0.04534582597207759,
+  "cash": 6.469542831076865,
   "positions": {
     "VWCE.DE": {
       "shares": 26.31451318021582,
@@ -28,10 +28,6 @@
       "shares": 1.0293351660595351,
       "avg_price": 595.1900024414062
     },
-    "NVDA": {
-      "shares": 2.0530845461159357,
-      "avg_price": 206.83999633789062
-    },
     "GOOGL": {
       "shares": 2.0861638217698553,
       "avg_price": 319.739990234375
@@ -43,6 +39,10 @@
     "AIR.PA": {
       "shares": 2.414113346028684,
       "avg_price": 215.39999389648438
+    },
+    "ENI.MI": {
+      "shares": 17.659137300352103,
+      "avg_price": 24.350000381469727
     }
   },
   "transactions": [
@@ -225,6 +225,24 @@
       "price": 166.36000061035156,
       "shares": 1.069968738560609,
       "reason": "Rebalanceo hacia el núcleo (core estaba al 46.5% vs objetivo 50%). Fondos procedentes del recorte técnico de BTC. VWCE es el ETF global de referencia de la cartera y refuerza la diversificación estructural."
+    },
+    {
+      "date": "2026-09-15",
+      "type": "sell",
+      "ticker": "NVDA",
+      "amount_eur": 436.42419700510476,
+      "price": 212.57000732421875,
+      "shares": 2.0530845461159357,
+      "reason": "Posición pequeña (+2.7%) con exposición ya cubierta por ETFs (VWCE/EQQQ). Rotación hacia ENI.MI con mejor valoración (PEG 0.44 vs implícito muy superior en NVDA) y diversificación sectorial hacia energía europea ausente en cartera."
+    },
+    {
+      "date": "2026-09-15",
+      "type": "buy",
+      "ticker": "ENI.MI",
+      "amount_eur": 430.0,
+      "price": 24.350000381469727,
+      "shares": 17.659137300352103,
+      "reason": "Entrada en energía europea: PEG 0.44, PER futuro 10.25, crecimiento beneficios +581%, cash flow guidance 2026 elevado +20% a €13.8B, buyback duplicado (~€2.8B), ex-dividendo 21 sep 2026, beta 0.24. Sector ausente en cartera, rotación desde NVDA de baja contribución."
     }
   ],
   "snapshots": [
@@ -552,6 +570,64 @@
         }
       },
       "note": "Revisión 2026-09-01: Cartera +6.94% (10.694€). Recorte técnico BTC-EUR (0.0025 uds, 168€) por exceso de concentración al 11.6% del portfolio (límite ~10-12%). Proceeds reinvertidos en VWCE.DE (+1.07 uds, 178€) para acercar el núcleo al 50% objetivo (estaba al 46.5%). META y AIR.PA mantenidas: tesis intactas pese a caídas temporales. NVDA identificada como mayor potencial (PEG 0.56, $1T order book) pero sin cash adicional para ampliar sin vender otras posiciones de calidad."
+    },
+    {
+      "date": "2026-09-15",
+      "total_value": 10784.315289473383,
+      "cash": 6.469542831076865,
+      "positions": {
+        "VWCE.DE": {
+          "shares": 26.31451318021582,
+          "price": 165.6999969482422,
+          "value": 4360.31475365624
+        },
+        "EQQQ.DE": {
+          "shares": 1.2565657781953825,
+          "price": 616.7000122070312,
+          "value": 774.9241307520301
+        },
+        "MSFT": {
+          "shares": 2.189697064252855,
+          "price": 498.6000061035156,
+          "value": 1091.7829696013237
+        },
+        "AAPL": {
+          "shares": 2.430094249212019,
+          "price": 329.55999755859375,
+          "value": 800.8618548374657
+        },
+        "BTC-EUR": {
+          "shares": 0.015901701524832557,
+          "price": 66180.9921875,
+          "value": 1052.3903843829003
+        },
+        "META": {
+          "shares": 1.0293351660595351,
+          "price": 669.8350219726562,
+          "value": 689.4847435747165
+        },
+        "GOOGL": {
+          "shares": 2.0861638217698553,
+          "price": 344.6549987792969,
+          "value": 719.0067894455028
+        },
+        "AMZN": {
+          "shares": 1.5465057101630013,
+          "price": 250.07000732421875,
+          "value": 386.73469426740786
+        },
+        "AIR.PA": {
+          "shares": 2.414113346028684,
+          "price": 195.66000366210938,
+          "value": 472.3454261247194
+        },
+        "ENI.MI": {
+          "shares": 17.659137300352103,
+          "price": 24.350000381469727,
+          "value": 430.0
+        }
+      },
+      "note": "Rotación NVDA→ENI.MI: vendido NVDA (436€, +2.7%) por baja contribución y cobertura indirecta vía ETFs. Comprado ENI.MI (430€): PEG 0.44, PER futuro 10.25, cash flow guidance +20%, buyback duplicado, ex-div 21 sep. Diversificación hacia energía europea (sector ausente). AMZN y AIR.PA mantenidos pese a pérdidas temporales: fundamentales sólidos confirmados con noticias recientes. Cartera: +7.81% total, balance core/satélites 47.6/52.4%."
     }
   ]
 }
