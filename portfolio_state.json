@@ -2,7 +2,7 @@
   "created_at": "2026-07-03",
   "currency": "EUR",
   "capital_inicial": 10000.0,
-  "cash": 6.469542831076865,
+  "cash": 5.818624284105226,
   "positions": {
     "VWCE.DE": {
       "shares": 26.31451318021582,
@@ -40,9 +40,9 @@
       "shares": 2.414113346028684,
       "avg_price": 215.39999389648438
     },
-    "ENI.MI": {
-      "shares": 17.659137300352103,
-      "avg_price": 24.350000381469727
+    "NVDA": {
+      "shares": 1.8487906341252043,
+      "avg_price": 229.8800048828125
     }
   },
   "transactions": [
@@ -243,6 +243,24 @@
       "price": 24.350000381469727,
       "shares": 17.659137300352103,
       "reason": "Entrada en energía europea: PEG 0.44, PER futuro 10.25, crecimiento beneficios +581%, cash flow guidance 2026 elevado +20% a €13.8B, buyback duplicado (~€2.8B), ex-dividendo 21 sep 2026, beta 0.24. Sector ausente en cartera, rotación desde NVDA de baja contribución."
+    },
+    {
+      "date": "2026-10-01",
+      "type": "sell",
+      "ticker": "ENI.MI",
+      "amount_eur": 424.34908145302836,
+      "price": 24.030000686645508,
+      "shares": 17.659137300352103,
+      "reason": "ENI.MI no encaja en estrategia de crecimiento agresiva. Q1 2026 earnings miss brutal (EPS 0.046 vs 1.22 estimado). El +581% de crecimiento de beneficios del scanner es efecto base puntual, no sostenible. Como petrolera, la diversificación energética ya la cubre VWCE.DE. Rotamos hacia NVDA que tiene mejores fundamentales de crecimiento."
+    },
+    {
+      "date": "2026-10-01",
+      "type": "buy",
+      "ticker": "NVDA",
+      "amount_eur": 425.0,
+      "price": 229.8800048828125,
+      "shares": 1.8487906341252043,
+      "reason": "NVDA: mejor candidata de crecimiento del mercado. Revenue +106% YoY, margen 64%, PEG 0.48 (infravalorada respecto a crecimiento), PER futuro 14.63, $500B en pedidos confirmados de chips AI. Sovereign AI triplicado. Reemplaza ENI.MI que no era un activo de crecimiento. Posición ~3.8% del total, dentro de límites del satélite."
     }
   ],
   "snapshots": [
@@ -628,6 +646,64 @@
         }
       },
       "note": "Rotación NVDA→ENI.MI: vendido NVDA (436€, +2.7%) por baja contribución y cobertura indirecta vía ETFs. Comprado ENI.MI (430€): PEG 0.44, PER futuro 10.25, cash flow guidance +20%, buyback duplicado, ex-div 21 sep. Diversificación hacia energía europea (sector ausente). AMZN y AIR.PA mantenidos pese a pérdidas temporales: fundamentales sólidos confirmados con noticias recientes. Cartera: +7.81% total, balance core/satélites 47.6/52.4%."
+    },
+    {
+      "date": "2026-10-01",
+      "total_value": 11118.390599312306,
+      "cash": 5.818624284105226,
+      "positions": {
+        "VWCE.DE": {
+          "shares": 26.31451318021582,
+          "price": 169.3800048828125,
+          "value": 4457.15237095379
+        },
+        "EQQQ.DE": {
+          "shares": 1.2565657781953825,
+          "price": 659.9000244140625,
+          "value": 829.2077877090084
+        },
+        "MSFT": {
+          "shares": 2.189697064252855,
+          "price": 513.4879760742188,
+          "value": 1124.383113738857
+        },
+        "AAPL": {
+          "shares": 2.430094249212019,
+          "price": 328.20001220703125,
+          "value": 797.5569622556211
+        },
+        "BTC-EUR": {
+          "shares": 0.015901701524832557,
+          "price": 74930.140625,
+          "value": 1191.5167314324804
+        },
+        "META": {
+          "shares": 1.0293351660595351,
+          "price": 727.02001953125,
+          "value": 748.3472725328057
+        },
+        "GOOGL": {
+          "shares": 2.0861638217698553,
+          "price": 339.9599914550781,
+          "value": 709.2122350227731
+        },
+        "AMZN": {
+          "shares": 1.5465057101630013,
+          "price": 247.2100067138672,
+          "value": 382.3116869924295
+        },
+        "AIR.PA": {
+          "shares": 2.414113346028684,
+          "price": 185.60000610351562,
+          "value": 448.05945175750225
+        },
+        "NVDA": {
+          "shares": 1.8487906341252043,
+          "price": 229.78500366210938,
+          "value": 424.82436263293357
+        }
+      },
+      "note": "Rotación: vendido ENI.MI (petrolera, Q1 2026 earnings miss, no encaja en estrategia de crecimiento) y comprado NVDA (revenue +106% YoY, PEG 0.48, margen 64%, $500B pedidos AI). Portfolio +11.2% desde inicio. AMZN y AIR.PA mantenidos pese a pérdidas: fundamentales intactos (AWS +37% YoY, AIR.PA crec. beneficios +126%). BTC +37.9%, MSFT +32.7%, META +22.2% liderando ganancias."
     }
   ]
 }
