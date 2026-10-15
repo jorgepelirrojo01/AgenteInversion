@@ -2,7 +2,7 @@
   "created_at": "2026-07-03",
   "currency": "EUR",
   "capital_inicial": 10000.0,
-  "cash": 5.818624284105226,
+  "cash": 2.728621842698985,
   "positions": {
     "VWCE.DE": {
       "shares": 26.31451318021582,
@@ -13,7 +13,7 @@
       "avg_price": 633.5999755859375
     },
     "MSFT": {
-      "shares": 2.189697064252855,
+      "shares": 1.9896970642528549,
       "avg_price": 387.1641701835477
     },
     "AAPL": {
@@ -41,8 +41,8 @@
       "avg_price": 215.39999389648438
     },
     "NVDA": {
-      "shares": 1.8487906341252043,
-      "avg_price": 229.8800048828125
+      "shares": 2.359610741261264,
+      "avg_price": 226.7323125144068
     }
   },
   "transactions": [
@@ -261,6 +261,24 @@
       "price": 229.8800048828125,
       "shares": 1.8487906341252043,
       "reason": "NVDA: mejor candidata de crecimiento del mercado. Revenue +106% YoY, margen 64%, PEG 0.48 (infravalorada respecto a crecimiento), PER futuro 14.63, $500B en pedidos confirmados de chips AI. Sovereign AI triplicado. Reemplaza ENI.MI que no era un activo de crecimiento. Posición ~3.8% del total, dentro de límites del satélite."
+    },
+    {
+      "date": "2026-10-15",
+      "type": "sell",
+      "ticker": "MSFT",
+      "amount_eur": 106.90999755859376,
+      "price": 534.5499877929688,
+      "shares": 0.2,
+      "reason": "MSFT ha llegado al 10.5% del portafolio (+38%), tocando el límite guía de 10-12% por satélite. Recorte mínimo para liberar capital y reinvertirlo en NVDA, que muestra mejores métricas de valoración (PEG 0.27, forward PE 13.5x) con pérdida temporal del -6.8%."
+    },
+    {
+      "date": "2026-10-15",
+      "type": "buy",
+      "ticker": "NVDA",
+      "amount_eur": 110.0,
+      "price": 215.33999633789062,
+      "shares": 0.5108201071360597,
+      "reason": "Promedio a la baja en NVDA: PEG 0.27 (más barato por crecimiento de toda la cartera), forward PE 13.5x, márgenes del 64%, ingresos +106% YoY. La pérdida del -6.8% desde nuestro coste es ruido de mercado, no deterioro de negocio. STRONG_BUY por analistas."
     }
   ],
   "snapshots": [
@@ -704,6 +722,64 @@
         }
       },
       "note": "Rotación: vendido ENI.MI (petrolera, Q1 2026 earnings miss, no encaja en estrategia de crecimiento) y comprado NVDA (revenue +106% YoY, PEG 0.48, margen 64%, $500B pedidos AI). Portfolio +11.2% desde inicio. AMZN y AIR.PA mantenidos pese a pérdidas: fundamentales intactos (AWS +37% YoY, AIR.PA crec. beneficios +126%). BTC +37.9%, MSFT +32.7%, META +22.2% liderando ganancias."
+    },
+    {
+      "date": "2026-10-15",
+      "total_value": 11173.939644518454,
+      "cash": 2.728621842698985,
+      "positions": {
+        "VWCE.DE": {
+          "shares": 26.31451318021582,
+          "price": 169.97999572753906,
+          "value": 4472.940837945355
+        },
+        "EQQQ.DE": {
+          "shares": 1.2565657781953825,
+          "price": 644.5,
+          "value": 809.856644046924
+        },
+        "MSFT": {
+          "shares": 1.9896970642528549,
+          "price": 534.4650268554688,
+          "value": 1063.4234948801493
+        },
+        "AAPL": {
+          "shares": 2.430094249212019,
+          "price": 345.94000244140625,
+          "value": 840.6668105052531
+        },
+        "BTC-EUR": {
+          "shares": 0.015901701524832557,
+          "price": 71662.7109375,
+          "value": 1139.5590397884785
+        },
+        "META": {
+          "shares": 1.0293351660595351,
+          "price": 732.7750244140625,
+          "value": 754.2711014395289
+        },
+        "GOOGL": {
+          "shares": 2.0861638217698553,
+          "price": 349.8349914550781,
+          "value": 729.8131027627504
+        },
+        "AMZN": {
+          "shares": 1.5465057101630013,
+          "price": 251.48500061035156,
+          "value": 388.92298946425456
+        },
+        "AIR.PA": {
+          "shares": 2.414113346028684,
+          "price": 191.97999572753906,
+          "value": 463.46146985638177
+        },
+        "NVDA": {
+          "shares": 2.359610741261264,
+          "price": 215.4149932861328,
+          "value": 508.295531986682
+        }
+      },
+      "note": "Revisión quincenal 15-oct-2026. Cartera +11.7% desde inicio (€11,166). Rebalanceo moderado: venta de 0.20 acc MSFT (€107) para recortar posición al límite (10.5% → 9.5%); reinversión en NVDA (€110) promediando a la baja a PEG 0.27 / forward PE 13.5x. Resto de posiciones mantenidas. AIR.PA, AMZN y NVDA en negativo pero con fundamentales sólidos; earnings de AMZN (oct 22-29) y AIR.PA (oct 28) como próximos catalizadores."
     }
   ]
 }
