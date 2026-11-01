@@ -2,7 +2,7 @@
   "created_at": "2026-07-03",
   "currency": "EUR",
   "capital_inicial": 10000.0,
-  "cash": 2.728621842698985,
+  "cash": 7.204014884039225,
   "positions": {
     "VWCE.DE": {
       "shares": 26.31451318021582,
@@ -36,13 +36,9 @@
       "shares": 1.5465057101630013,
       "avg_price": 271.5799865722656
     },
-    "AIR.PA": {
-      "shares": 2.414113346028684,
-      "avg_price": 215.39999389648438
-    },
     "NVDA": {
-      "shares": 2.359610741261264,
-      "avg_price": 226.7323125144068
+      "shares": 4.607460630686492,
+      "avg_price": 215.9540970080409
     }
   },
   "transactions": [
@@ -279,6 +275,24 @@
       "price": 215.33999633789062,
       "shares": 0.5108201071360597,
       "reason": "Promedio a la baja en NVDA: PEG 0.27 (más barato por crecimiento de toda la cartera), forward PE 13.5x, márgenes del 64%, ingresos +106% YoY. La pérdida del -6.8% desde nuestro coste es ruido de mercado, no deterioro de negocio. STRONG_BUY por analistas."
+    },
+    {
+      "date": "2026-11-01",
+      "type": "sell",
+      "ticker": "AIR.PA",
+      "amount_eur": 464.4753930413402,
+      "price": 192.39999389648438,
+      "shares": 2.414113346028684,
+      "reason": "Tesis debilitada: revenue -2%, márgenes 8%, recorte de objetivo de entregas 2026 por fallo industrial. El capital rota hacia NVDA que ofrece PEG 0.25 con crecimiento 106%, fundamentales claramente superiores."
+    },
+    {
+      "date": "2026-11-01",
+      "type": "buy",
+      "ticker": "NVDA",
+      "amount_eur": 460.0,
+      "price": 204.63999938964844,
+      "shares": 2.247849889425228,
+      "reason": "PEG 0.25 excepcional, ingresos +106%, beneficios +128%, margen 64%, PER futuro 12.86x. Corrección de octubre parece puntual sin deterioro fundamental. Strong Buy consenso analistas. Ampliamos posición desde 4.5% hasta ~8.5% del portfolio, aprovechando el precio en mínimos recientes."
     }
   ],
   "snapshots": [
@@ -780,6 +794,59 @@
         }
       },
       "note": "Revisión quincenal 15-oct-2026. Cartera +11.7% desde inicio (€11,166). Rebalanceo moderado: venta de 0.20 acc MSFT (€107) para recortar posición al límite (10.5% → 9.5%); reinversión en NVDA (€110) promediando a la baja a PEG 0.27 / forward PE 13.5x. Resto de posiciones mantenidas. AIR.PA, AMZN y NVDA en negativo pero con fundamentales sólidos; earnings de AMZN (oct 22-29) y AIR.PA (oct 28) como próximos catalizadores."
+    },
+    {
+      "date": "2026-11-01",
+      "total_value": 10752.202748802687,
+      "cash": 7.204014884039225,
+      "positions": {
+        "VWCE.DE": {
+          "shares": 26.31451318021582,
+          "price": 168.89999389648438,
+          "value": 4444.521115527409
+        },
+        "EQQQ.DE": {
+          "shares": 1.2565657781953825,
+          "price": 623.4000244140625,
+          "value": 783.3431368048768
+        },
+        "MSFT": {
+          "shares": 1.9896970642528549,
+          "price": 521.9099731445312,
+          "value": 1038.4427413699602
+        },
+        "AAPL": {
+          "shares": 2.430094249212019,
+          "price": 344.6300048828125,
+          "value": 837.4833929716327
+        },
+        "BTC-EUR": {
+          "shares": 0.015901701524832557,
+          "price": 69792.03125,
+          "value": 1109.8120497492864
+        },
+        "META": {
+          "shares": 1.0293351660595351,
+          "price": 614.989990234375,
+          "value": 633.0308237228522
+        },
+        "GOOGL": {
+          "shares": 2.0861638217698553,
+          "price": 279.8399963378906,
+          "value": 583.7920762443163
+        },
+        "AMZN": {
+          "shares": 1.5465057101630013,
+          "price": 240.35000610351562,
+          "value": 371.70265687679915
+        },
+        "NVDA": {
+          "shares": 4.607460630686492,
+          "price": 204.63999938964844,
+          "value": 942.870740651513
+        }
+      },
+      "note": "Rotación AIR.PA → NVDA. Vendida AIR.PA completa (464€) por tesis debilitada: revenue -2%, márgenes 8%, recorte objetivo entregas 2026. Comprada NVDA (~460€): PEG 0.25, ingresos +106%, márgenes 64%, PER futuro 12.86x. NVDA pasa de 4.5% a 8.8% del portfolio. Balance Core/Satélite: 48.6% / 51.3%. Total cartera: 10.752€ (+7.5% desde inicio)."
     }
   ]
 }
