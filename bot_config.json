@@ -1,8 +1,12 @@
 {
   "hora_aviso": "11:00",
   "offset": 839884274,
-  "ultimo_envio": "2026-11-03",
+  "ultimo_envio": "2026-11-04",
   "pausado": false,
-  "alertados_hoy": {},
+  "alertados_hoy": {
+    "MSFT": "2026-11-04",
+    "AAPL": "2026-11-04",
+    "AMZN": "2026-11-04"
+  },
   "propuesta_pendiente": null
 }
