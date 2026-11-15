@@ -2,7 +2,7 @@
   "created_at": "2026-07-03",
   "currency": "EUR",
   "capital_inicial": 10000.0,
-  "cash": 7.204014884039225,
+  "cash": 0.5952332195782333,
   "positions": {
     "VWCE.DE": {
       "shares": 26.31451318021582,
@@ -32,13 +32,9 @@
       "shares": 2.0861638217698553,
       "avg_price": 319.739990234375
     },
-    "AMZN": {
-      "shares": 1.5465057101630013,
-      "avg_price": 271.5799865722656
-    },
     "NVDA": {
-      "shares": 4.607460630686492,
-      "avg_price": 215.9540970080409
+      "shares": 7.180380399161432,
+      "avg_price": 196.9254999589068
     }
   },
   "transactions": [
@@ -293,6 +289,24 @@
       "price": 204.63999938964844,
       "shares": 2.247849889425228,
       "reason": "PEG 0.25 excepcional, ingresos +106%, beneficios +128%, margen 64%, PER futuro 12.86x. Corrección de octubre parece puntual sin deterioro fundamental. Strong Buy consenso analistas. Ampliamos posición desde 4.5% hasta ~8.5% del portfolio, aprovechando el precio en mínimos recientes."
+    },
+    {
+      "date": "2026-11-15",
+      "type": "sell",
+      "ticker": "AMZN",
+      "amount_eur": 412.391218335539,
+      "price": 266.6600036621094,
+      "shares": 1.5465057101630013,
+      "reason": "Fundamentales débiles: crecimiento de beneficios -3%, margen 17%, PEG 1.24. Posición más pequeña de satélites sin catalizador claro. Capital redirigido a NVDA donde PEG=0.20 y PER futuro=10.27 son mucho más atractivos."
+    },
+    {
+      "date": "2026-11-15",
+      "type": "buy",
+      "ticker": "NVDA",
+      "amount_eur": 419.0,
+      "price": 162.85000610351562,
+      "shares": 2.57291976847494,
+      "reason": "Promediar a la baja con fundamentales excepcionales: PEG=0.20, PER futuro=10.27, crecimiento beneficios +128%, margen 64%. Monopolio efectivo en chips de IA para data centers. Rotación de AMZN (fundamentales débiles) a NVDA (fundamentales excepcionales)."
     }
   ],
   "snapshots": [
@@ -847,6 +861,54 @@
         }
       },
       "note": "Rotación AIR.PA → NVDA. Vendida AIR.PA completa (464€) por tesis debilitada: revenue -2%, márgenes 8%, recorte objetivo entregas 2026. Comprada NVDA (~460€): PEG 0.25, ingresos +106%, márgenes 64%, PER futuro 12.86x. NVDA pasa de 4.5% a 8.8% del portfolio. Balance Core/Satélite: 48.6% / 51.3%. Total cartera: 10.752€ (+7.5% desde inicio)."
+    },
+    {
+      "date": "2026-11-15",
+      "total_value": 10533.402404619139,
+      "cash": 0.5952332195782333,
+      "positions": {
+        "VWCE.DE": {
+          "shares": 26.31451318021582,
+          "price": 169.86000061035156,
+          "value": 4469.783224852563
+        },
+        "EQQQ.DE": {
+          "shares": 1.2565657781953825,
+          "price": 615.5,
+          "value": 773.4162364792579
+        },
+        "MSFT": {
+          "shares": 1.9896970642528549,
+          "price": 523.8800048828125,
+          "value": 1042.3625077361032
+        },
+        "AAPL": {
+          "shares": 2.430094249212019,
+          "price": 356.2699890136719,
+          "value": 865.7696514689532
+        },
+        "BTC-EUR": {
+          "shares": 0.015901701524832557,
+          "price": 58774.328125,
+          "value": 934.6118231663215
+        },
+        "META": {
+          "shares": 1.0293351660595351,
+          "price": 641.6900024414062,
+          "value": 660.5140852217684
+        },
+        "GOOGL": {
+          "shares": 2.0861638217698553,
+          "price": 295.7699890136719,
+          "value": 617.0246506455899
+        },
+        "NVDA": {
+          "shares": 7.180380399161432,
+          "price": 162.85000610351562,
+          "value": 1169.3249918290032
+        }
+      },
+      "note": "Rotación AMZN→NVDA: vendido AMZN completo (412€, -1.8%) por fundamentales débiles (benef -3%, PEG 1.24). Comprado NVDA con 419€ para promediar a la baja (nuevo coste medio ~197 USD vs 215 anterior). PEG NVDA=0.20, PER futuro=10.27, crecimiento +128%. Reparto núcleo/satélites: 50/50 intacto. Valor total: ~10.534€ (+5.3% desde inicio)."
     }
   ]
 }
